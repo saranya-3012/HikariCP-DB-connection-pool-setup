@@ -1,0 +1,16 @@
+use bangtandb;
+
+CREATE TABLE User_Inf (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    balance DECIMAL(15,2) DEFAULT 0
+);
+
+CREATE TABLE Transactions_Inf (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    type VARCHAR(20) NOT NULL, -- DEPOSIT, WITHDRAW, TRANSFER
+    amount DECIMAL(15,2) NOT NULL,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
