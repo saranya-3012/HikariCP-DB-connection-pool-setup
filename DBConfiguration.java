@@ -16,7 +16,7 @@ public class DBConfiguration {
         	// HikariConfig used to store all the configuration settings for database connection pool
             HikariConfig config = new HikariConfig();
             
-            config.setJdbcUrl("jdbc:mysql://localhost:3306/bangtan_db");
+            config.setJdbcUrl("jdbc:mysql://localhost:3306/bangtandb");
             config.setUsername("root");
             config.setPassword("root");
             
@@ -33,3 +33,4 @@ public class DBConfiguration {
         return dataSource;
     }
 }
+
