@@ -16,9 +16,9 @@ public class DBConfiguration {
         	// HikariConfig used to store all the configuration settings for database connection pool
             HikariConfig config = new HikariConfig();
             
-            config.setJdbcUrl("jdbc:mysql://localhost:3306/fintech_db");
+            config.setJdbcUrl("jdbc:mysql://localhost:3306/bangtan_db");
             config.setUsername("root");
-            config.setPassword("your_password_here");
+            config.setPassword("root");
             
             
             config.setMaximumPoolSize(10);     // Max 10 active connections at a time
@@ -33,3 +33,4 @@ public class DBConfiguration {
         return dataSource;
     }
 }
+
