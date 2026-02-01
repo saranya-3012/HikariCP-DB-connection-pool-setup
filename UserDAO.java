@@ -15,7 +15,7 @@ public class UserDAO {
     // Create New User
     public void createUser(String username, double initialBalance) throws SQLException {
     	
-        String sql = "INSERT INTO Users (username, balance) VALUES (?, ?)";
+        String sql = "INSERT INTO User_Inf (username, balance) VALUES (?, ?)";
         
         try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -29,7 +29,7 @@ public class UserDAO {
     // Check Balance 
     public double getBalance(int userId) throws SQLException {
     	
-        String sql = "SELECT balance FROM Users_Inf WHERE id = ?";
+        String sql = "SELECT balance FROM User_Inf WHERE id = ?";
         
         try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -44,7 +44,7 @@ public class UserDAO {
     // Update Balance
     public void updateBalance(int userId, double newBalance) throws SQLException {
     	
-        String sql = "UPDATE Users_Inf SET balance = ? WHERE id = ?";
+        String sql = "UPDATE User_Inf SET balance = ? WHERE id = ?";
         
         try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -55,3 +55,4 @@ public class UserDAO {
         }
     }
 }
+
